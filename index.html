@@ -1,107 +1,16 @@
 <!DOCTYPE html>
 <html lang="vi" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Tiên tri - Giải pháp Công nghệ Tương lai</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Roboto', 'sans-serif'],
-              serif: ['"Cormorant Garamond"', 'serif'],
-            },
-            colors: {
-              background: '#020617', // Slate 950 - Deep Navy Blue
-              surface: '#0f172a',    // Slate 900
-              surfaceLight: '#1e293b', // Slate 800
-              primary: '#8b5cf6',    // Violet 500
-              secondary: '#94a3b8',  // Slate 400
-              accent: '#38bdf8',     // Sky 400
-              white: '#f8fafc',      // Slate 50
-            },
-            animation: {
-              'fade-in': 'fadeIn 0.8s ease-out forwards',
-              'slide-up': 'slideUp 0.8s ease-out forwards',
-              'blob': 'blob 7s infinite',
-              'wander': 'wander 15s ease-in-out infinite',
-              'wander-slow': 'wander 20s ease-in-out infinite',
-              'wander-reverse': 'wander-reverse 18s ease-in-out infinite',
-              'float': 'float 10s ease-in-out infinite',
-              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' },
-              },
-              slideUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              blob: {
-                '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                '100%': { transform: 'translate(0px, 0px) scale(1)' },
-              },
-              wander: {
-                '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                '25%': { transform: 'translate(50px, -80px) scale(1.1)' },
-                '50%': { transform: 'translate(-40px, 60px) scale(0.9)' },
-                '75%': { transform: 'translate(30px, 30px) scale(1.05)' },
-                '100%': { transform: 'translate(0px, 0px) scale(1)' },
-              },
-              'wander-reverse': {
-                '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                '25%': { transform: 'translate(-50px, 60px) scale(0.9)' },
-                '50%': { transform: 'translate(40px, -40px) scale(1.1)' },
-                '75%': { transform: 'translate(-30px, -20px) scale(0.95)' },
-                '100%': { transform: 'translate(0px, 0px) scale(1)' },
-              },
-              float: {
-                 '0%': { transform: 'translateY(0px) rotate(0deg)' },
-                 '50%': { transform: 'translateY(-20px) rotate(2deg)' },
-                 '100%': { transform: 'translateY(0px) rotate(0deg)' },
-              }
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      body { 
-        background-color: #020617; 
-        color: #f8fafc;
-        font-family: 'Roboto', sans-serif;
-        -webkit-font-smoothing: antialiased; 
-      }
-      .animation-delay-2000 {
-        animation-delay: 2s;
-      }
-      .animation-delay-4000 {
-        animation-delay: 4s;
-      }
-      /* Minimalist Scrollbar */
-      ::-webkit-scrollbar {
-        width: 6px;
-      }
-      ::-webkit-scrollbar-track {
-        background: transparent; 
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #334155; 
-        border-radius: 10px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #475569; 
-      }
-    </style>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Tiên tri - Giải pháp Công nghệ Tương lai</title>
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Cormorant+Garamond:wght@600;700&display=swap"
+    rel="stylesheet">
   <script type="importmap">
 {
   "imports": {
@@ -114,7 +23,10 @@
 }
 </script>
 </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>
