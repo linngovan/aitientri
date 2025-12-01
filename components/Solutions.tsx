@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, Sparkles, Hash, Layers, ExternalLink, ArrowRight } from 'lucide-react';
+import { Compass, Sparkles, Hash, Layers, ExternalLink, ArrowRight, Hand } from 'lucide-react';
 import { SectionId, Service } from '../types';
 
 const Solutions: React.FC = () => {
@@ -27,6 +27,12 @@ const Solutions: React.FC = () => {
       title: 'Tarot Reader AI',
       description: 'AI được huấn luyện chuyên sâu giúp rút bài và giải mã thông điệp Tarot dựa trên ngữ cảnh câu hỏi, khơi thông trực giác và giải tỏa tâm lý một cách riêng tư.',
       icon: <Layers />
+    },
+    {
+      id: 'chi-tay',
+      title: 'AI Xem Chỉ Tay',
+      description: 'Phân tích đường chỉ tay bằng công nghệ nhận diện hình ảnh AI. Giải mã vận mệnh, tình duyên và sự nghiệp qua các đường Tâm đạo, Trí đạo và Sinh đạo.',
+      icon: <Hand />
     }
   ];
 
@@ -45,13 +51,13 @@ const Solutions: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {services.map((service, index) => {
             const isHuyenVi = service.id === 'huyen-vi';
-            
+
             return (
-              <div 
-                key={service.id} 
+              <div
+                key={service.id}
                 className={`group relative flex flex-col p-8 rounded-3xl transition-all duration-500 overflow-hidden
-                  ${isHuyenVi 
-                    ? 'bg-gradient-to-br from-white/10 to-primary/10 border border-primary/50 shadow-2xl shadow-primary/10 hover:shadow-primary/20' 
+                  ${isHuyenVi
+                    ? 'bg-gradient-to-br from-white/10 to-primary/10 border border-primary/50 shadow-2xl shadow-primary/10 hover:shadow-primary/20'
                     : 'bg-white/5 backdrop-blur-md border border-white/5 hover:border-white/20 hover:bg-white/10'
                   }
                   hover:-translate-y-2
@@ -61,10 +67,10 @@ const Solutions: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none"></div>
 
                 <div className="flex items-start justify-between mb-6">
-                   {/* Icon */}
+                  {/* Icon */}
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 border transition-all duration-300
-                    ${isHuyenVi 
-                      ? 'bg-primary text-white border-primary shadow-lg shadow-primary/30 group-hover:scale-110' 
+                    ${isHuyenVi
+                      ? 'bg-primary text-white border-primary shadow-lg shadow-primary/30 group-hover:scale-110'
                       : 'bg-surfaceLight/50 text-secondary border-white/10 group-hover:text-white group-hover:bg-white/10'
                     }
                   `}>
@@ -84,11 +90,11 @@ const Solutions: React.FC = () => {
                     </span>
                   )}
                 </div>
-                
+
                 <h3 className={`text-2xl font-bold mb-4 transition-colors ${isHuyenVi ? 'text-white' : 'text-gray-100 group-hover:text-white'}`}>
                   {service.title}
                 </h3>
-                
+
                 <p className="text-secondary leading-relaxed text-base text-justify flex-grow">
                   {service.description}
                 </p>
@@ -96,9 +102,9 @@ const Solutions: React.FC = () => {
                 {/* Footer Action Area */}
                 <div className="mt-8 pt-6 border-t border-white/5">
                   {isHuyenVi ? (
-                    <a 
-                      href="https://huyenvi.vercel.app/" 
-                      target="_blank" 
+                    <a
+                      href="https://huyenvi.vercel.app/"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors group/link"
                     >
