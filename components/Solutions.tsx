@@ -11,6 +11,12 @@ const Solutions: React.FC = () => {
       icon: <Compass />
     },
     {
+      id: 'chi-tay',
+      title: 'AI Xem Chỉ Tay',
+      description: 'Phân tích đường chỉ tay bằng công nghệ nhận diện hình ảnh AI. Giải mã vận mệnh, tình duyên và sự nghiệp qua các đường Tâm đạo, Trí đạo và Sinh đạo.',
+      icon: <Hand />
+    },
+    {
       id: 'tu-vi',
       title: 'Tử Vi Đẩu Số AI',
       description: 'Ứng dụng AI lập và luận giải lá số Tử Vi Đẩu Số tức thì. Phân tích vị trí các sao để đưa ra lời giải đoán cá nhân hóa về vận mệnh, tài lộc và chu kỳ thịnh suy.',
@@ -27,12 +33,6 @@ const Solutions: React.FC = () => {
       title: 'Tarot Reader AI',
       description: 'AI được huấn luyện chuyên sâu giúp rút bài và giải mã thông điệp Tarot dựa trên ngữ cảnh câu hỏi, khơi thông trực giác và giải tỏa tâm lý một cách riêng tư.',
       icon: <Layers />
-    },
-    {
-      id: 'chi-tay',
-      title: 'AI Xem Chỉ Tay',
-      description: 'Phân tích đường chỉ tay bằng công nghệ nhận diện hình ảnh AI. Giải mã vận mệnh, tình duyên và sự nghiệp qua các đường Tâm đạo, Trí đạo và Sinh đạo.',
-      icon: <Hand />
     }
   ];
 
@@ -51,12 +51,14 @@ const Solutions: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {services.map((service, index) => {
             const isHuyenVi = service.id === 'huyen-vi';
+            const isChiTay = service.id === 'chi-tay';
+            const isFeatured = isHuyenVi || isChiTay;
 
             return (
               <div
                 key={service.id}
                 className={`group relative flex flex-col p-8 rounded-3xl transition-all duration-500 overflow-hidden
-                  ${isHuyenVi
+                  ${isFeatured
                     ? 'bg-gradient-to-br from-white/10 to-primary/10 border border-primary/50 shadow-2xl shadow-primary/10 hover:shadow-primary/20'
                     : 'bg-white/5 backdrop-blur-md border border-white/5 hover:border-white/20 hover:bg-white/10'
                   }
@@ -69,7 +71,7 @@ const Solutions: React.FC = () => {
                 <div className="flex items-start justify-between mb-6">
                   {/* Icon */}
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 border transition-all duration-300
-                    ${isHuyenVi
+                    ${isFeatured
                       ? 'bg-primary text-white border-primary shadow-lg shadow-primary/30 group-hover:scale-110'
                       : 'bg-surfaceLight/50 text-secondary border-white/10 group-hover:text-white group-hover:bg-white/10'
                     }
@@ -78,20 +80,20 @@ const Solutions: React.FC = () => {
                   </div>
 
                   {/* Beta Tag */}
-                  {!isHuyenVi && (
+                  {!isFeatured && (
                     <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-bold text-secondary uppercase tracking-wider">
                       Beta
                     </span>
                   )}
-                  {/* Featured Tag for Huyen Vi */}
-                  {isHuyenVi && (
+                  {/* Featured Tag */}
+                  {isFeatured && (
                     <span className="px-3 py-1 bg-accent/20 border border-accent/20 rounded-full text-xs font-bold text-accent uppercase tracking-wider flex items-center gap-1">
                       <Sparkles size={12} /> Featured
                     </span>
                   )}
                 </div>
 
-                <h3 className={`text-2xl font-bold mb-4 transition-colors ${isHuyenVi ? 'text-white' : 'text-gray-100 group-hover:text-white'}`}>
+                <h3 className={`text-2xl font-bold mb-4 transition-colors ${isFeatured ? 'text-white' : 'text-gray-100 group-hover:text-white'}`}>
                   {service.title}
                 </h3>
 
@@ -104,6 +106,16 @@ const Solutions: React.FC = () => {
                   {isHuyenVi ? (
                     <a
                       href="https://huyenvi.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors group/link"
+                    >
+                      Trải nghiệm ngay
+                      <ExternalLink size={18} className="group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-transform" />
+                    </a>
+                  ) : isChiTay ? (
+                    <a
+                      href="https://tuongphap-tan.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors group/link"
